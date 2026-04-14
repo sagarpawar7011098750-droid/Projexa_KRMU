@@ -1,7 +1,7 @@
 // 
 // BACKEND API CONFIG
-// 
-const apiBase = "http://localhost:3000";
+
+const apiBase = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" ? "http://localhost:3000" : "";
 
 // 
 // GLOBAL CHART INSTANCES
