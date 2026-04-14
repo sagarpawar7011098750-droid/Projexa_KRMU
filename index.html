@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Skill Obsolescence & Career Advisor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- TOP NAVIGATION -->
+<div class="topnav">
+  <div class="nav-brand">
+    <span class="logo">🔮</span>
+    <span>AI Skill Obsolescence & Career Advisor</span>
+  </div>
+
+  <div class="nav-actions">
+    <button id="navAnalyze" class="nav-btn active" onclick="showAnalyzeTab()">Analyze</button>
+    <button id="navCompare" class="nav-btn" onclick="showCompareTab()">Compare</button>
+    <button class="nav-btn" onclick="toggleTheme()">🌓</button>
+  </div>
+</div>
+
+<!-- ================= ANALYZE TAB ================= -->
+<div class="container" id="mainSection">
+
+  <h2>Skill Analysis Dashboard</h2>
+  <p class="subtitle">Analyze real job market trends and predict future-proof skills</p>
+
+  <div class="card">
+    <div class="input-group">
+      <div style="flex: 1; min-width: 220px;">
+        <label for="skill" class="input-label">Select Your Skill</label>
+        <select id="skill" class="modern-select">
+          <option>Python</option>
+          <option>Java</option>
+          <option>SQL</option>
+          <option>React</option>
+          <option>Angular</option>
+          <option>PHP</option>
+          <option>Machine Learning</option>
+          <option>Data Analysis</option>
+          <option>Cloud</option>
+          <option>AWS</option>
+          <option>Azure</option>
+          <option>Automation</option>
+          <option>Testing</option>
+          <option>DevOps</option>
+          <option>Cybersecurity</option>
+          <option>UI/UX Design</option>
+          <option>Blockchain</option>
+          <option>Data Engineering</option>
+          <option>AI</option>
+          <option>Mobile Development</option>
+        </select>
+      </div>
+
+      <div style="flex: 1; min-width: 220px;">
+        <label for="customSkill" class="input-label">Or enter a custom skill</label>
+        <input id="customSkill" class="modern-select custom-input" placeholder="e.g. Kubernetes, Cybersecurity" />
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div style="flex: 1; min-width: 220px;">
+        <label for="experience" class="input-label">Experience Level</label>
+        <select id="experience" class="modern-select">
+          <option value="Entry">Entry</option>
+          <option value="Mid">Mid</option>
+          <option value="Senior">Senior</option>
+          <option value="Executive">Executive</option>
+        </select>
+      </div>
+
+      <div style="flex: 1; min-width: 220px;">
+        <label for="industry" class="input-label">Industry Focus</label>
+        <select id="industry" class="modern-select">
+          <option value="Technology">Technology</option>
+          <option value="Finance">Finance</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Consulting">Consulting</option>
+          <option value="Education">Education</option>
+          <option value="Retail">Retail</option>
+          <option value="Manufacturing">Manufacturing</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <button id="analyzeButton" class="analyze-btn" onclick="analyzeSkill()">🔍 Analyze</button>
+      <button class="compare-btn" onclick="copyResultSummary()" id="copySummaryBtn" disabled>📋 Copy</button>
+      <button class="compare-btn" onclick="saveFavoriteSkill()" id="favoriteBtn" disabled>⭐ Save</button>
+    </div>
+
+    <div class="quick-skills">
+      <span class="subtitle">Trending Skills:</span>
+      <div class="skill-chips">
+        <button class="quick-skill-btn" onclick="selectQuickSkill('Python')">Python</button>
+        <button class="quick-skill-btn" onclick="selectQuickSkill('Cloud')">Cloud</button>
+        <button class="quick-skill-btn" onclick="selectQuickSkill('Machine Learning')">Machine Learning</button>
+        <button class="quick-skill-btn" onclick="selectQuickSkill('Cybersecurity')">Cybersecurity</button>
+        <button class="quick-skill-btn" onclick="selectQuickSkill('DevOps')">DevOps</button>
+        <button class="quick-skill-btn" onclick="selectQuickSkill('Data Engineering')">Data Engineering</button>
+      </div>
+    </div>
+
+    <div id="loadingSpinner" class="loading-spinner hidden">
+      <div class="loading"></div>
+      <span>Analyzing skill trends...</span>
+    </div>
+  </div>
+
+  <div class="result hidden" id="resultBox">
+    <h3>📊 Skill Analysis</h3>
+
+    <div id="textResults"></div>
+
+    <h4>📈 Skill Demand Trend</h4>
+    <canvas id="trendChart" width="400" height="200"></canvas>
+
+    <h4>🎯 Career Sustainability</h4>
+    <canvas id="sustainabilityChart" width="400" height="150"></canvas>
+  </div>
+
+  <div class="card info-card" id="industryCard">
+    <h4>🌎 Industry Snapshot</h4>
+    <p id="industrySnapshot">Industry insights will appear here after analysis.</p>
+  </div>
+
+  <div class="card info-card" id="salaryCard">
+    <h4>💰 Salary Outlook</h4>
+    <p id="salaryOutlook">Salary predictions and growth estimates will update automatically.</p>
+  </div>
+
+  <div class="card">
+    <h4>📌 Saved Favorites</h4>
+    <div id="favoriteSkillsList" class="chip-list"></div>
+    <div class="section-divider"></div>
+    <h4>🕘 Recently Analyzed</h4>
+    <div id="recentSkillsList" class="chip-list"></div>
+  </div>
+
+</div>
+
+<!-- ================= COMPARE TAB ================= -->
+<div class="container hidden" id="compareSection">
+
+  <h2>🆚 Skill Comparison Dashboard</h2>
+  <p class="subtitle">Compare two skills side-by-side</p>
+
+  <div class="card">
+    <div class="input-group">
+      <div style="flex: 1; min-width: 220px;">
+        <label for="skill1" class="input-label">Skill 1</label>
+        <select id="skill1" class="modern-select">
+          <option>Python</option>
+          <option>Java</option>
+          <option>SQL</option>
+          <option>React</option>
+          <option>Angular</option>
+          <option>PHP</option>
+          <option>Machine Learning</option>
+          <option>Data Analysis</option>
+          <option>Cloud</option>
+          <option>AWS</option>
+          <option>Azure</option>
+          <option>Testing</option>
+          <option>DevOps</option>
+          <option>Cybersecurity</option>
+          <option>Data Engineering</option>
+        </select>
+      </div>
+      <div style="flex: 1; min-width: 220px;">
+        <label for="skill2" class="input-label">Skill 2</label>
+        <select id="skill2" class="modern-select">
+          <option>Python</option>
+          <option>Java</option>
+          <option>SQL</option>
+          <option>React</option>
+          <option>Angular</option>
+          <option>PHP</option>
+          <option>Machine Learning</option>
+          <option>Data Analysis</option>
+          <option>Cloud</option>
+          <option>AWS</option>
+          <option>Azure</option>
+          <option>Testing</option>
+          <option>DevOps</option>
+          <option>Cybersecurity</option>
+          <option>Data Engineering</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div style="flex: 1; min-width: 220px;">
+        <label for="experience1" class="input-label">Experience (Skill 1)</label>
+        <select id="experience1" class="modern-select">
+          <option value="Entry">Entry</option>
+          <option value="Mid">Mid</option>
+          <option value="Senior">Senior</option>
+          <option value="Executive">Executive</option>
+        </select>
+      </div>
+      <div style="flex: 1; min-width: 220px;">
+        <label for="industry1" class="input-label">Industry (Skill 1)</label>
+        <select id="industry1" class="modern-select">
+          <option value="Technology">Technology</option>
+          <option value="Finance">Finance</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Consulting">Consulting</option>
+          <option value="Education">Education</option>
+          <option value="Retail">Retail</option>
+          <option value="Manufacturing">Manufacturing</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div style="flex: 1; min-width: 220px;">
+        <label for="experience2" class="input-label">Experience (Skill 2)</label>
+        <select id="experience2" class="modern-select">
+          <option value="Entry">Entry</option>
+          <option value="Mid">Mid</option>
+          <option value="Senior">Senior</option>
+          <option value="Executive">Executive</option>
+        </select>
+      </div>
+      <div style="flex: 1; min-width: 220px;">
+        <label for="industry2" class="input-label">Industry (Skill 2)</label>
+        <select id="industry2" class="modern-select">
+          <option value="Technology">Technology</option>
+          <option value="Finance">Finance</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Consulting">Consulting</option>
+          <option value="Education">Education</option>
+          <option value="Retail">Retail</option>
+          <option value="Manufacturing">Manufacturing</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div style="flex: 1; min-width: 220px;">
+        <label for="compareMetric" class="input-label">Compare By</label>
+        <select id="compareMetric" class="modern-select">
+          <option value="sustainability">Sustainability Score</option>
+          <option value="demand">Demand Level</option>
+          <option value="risk">Risk Level</option>
+        </select>
+      </div>
+      <div style="flex: 1; min-width: 220px; display:flex; align-items:flex-end; gap:12px;">
+        <button class="compare-btn" onclick="swapCompareSkills()" type="button">🔁 Swap</button>
+      </div>
+    </div>
+
+    <button id="compareButton" class="analyze-btn compare-btn" onclick="compareSkills()">
+      📊 Compare
+    </button>
+  </div>
+
+  <div class="card info-card" id="compareInsightsCard">
+    <h4>💡 Comparison Insights</h4>
+    <p id="compareInsights">Comparison insights appear here after comparing two skills.</p>
+  </div>
+
+  <h4>📊 Comparison Chart</h4>
+  <canvas id="compareChart" width="400" height="200"></canvas>
+
+  <div class="card" style="margin-top:20px;">
+    <h4>📋 Comparison Summary</h4>
+
+    <table id="compareTable">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th id="skillAName">Skill A</th>
+          <th id="skillBName">Skill B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sustainability</td>
+          <td id="skillAScore">-</td>
+          <td id="skillBScore">-</td>
+        </tr>
+        <tr>
+          <td>Risk Level</td>
+          <td id="skillARisk">-</td>
+          <td id="skillBRisk">-</td>
+        </tr>
+        <tr>
+          <td>Demand Level</td>
+          <td id="skillADemand">-</td>
+          <td id="skillBDemand">-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="winnerText" class="winner-text"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

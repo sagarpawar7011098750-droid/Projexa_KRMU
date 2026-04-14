@@ -1,0 +1,142 @@
+{
+  "Python": [
+    {"year": 2021, "demand": 84, "sustainability": 74, "risk": 24},
+    {"year": 2022, "demand": 87, "sustainability": 77, "risk": 22},
+    {"year": 2023, "demand": 90, "sustainability": 81, "risk": 19},
+    {"year": 2024, "demand": 92, "sustainability": 84, "risk": 17},
+    {"year": 2025, "demand": 93, "sustainability": 86, "risk": 15}
+  ],
+  "Java": [
+    {"year": 2021, "demand": 77, "sustainability": 63, "risk": 28},
+    {"year": 2022, "demand": 75, "sustainability": 65, "risk": 27},
+    {"year": 2023, "demand": 73, "sustainability": 66, "risk": 30},
+    {"year": 2024, "demand": 72, "sustainability": 67, "risk": 31},
+    {"year": 2025, "demand": 72, "sustainability": 68, "risk": 30}
+  ],
+  "SQL": [
+    {"year": 2021, "demand": 78, "sustainability": 70, "risk": 26},
+    {"year": 2022, "demand": 79, "sustainability": 72, "risk": 25},
+    {"year": 2023, "demand": 80, "sustainability": 74, "risk": 24},
+    {"year": 2024, "demand": 81, "sustainability": 76, "risk": 23},
+    {"year": 2025, "demand": 80, "sustainability": 78, "risk": 22}
+  ],
+  "React": [
+    {"year": 2021, "demand": 85, "sustainability": 76, "risk": 24},
+    {"year": 2022, "demand": 86, "sustainability": 78, "risk": 23},
+    {"year": 2023, "demand": 87, "sustainability": 79, "risk": 23},
+    {"year": 2024, "demand": 88, "sustainability": 80, "risk": 22},
+    {"year": 2025, "demand": 88, "sustainability": 80, "risk": 25}
+  ],
+  "Angular": [
+    {"year": 2021, "demand": 74, "sustainability": 58, "risk": 36},
+    {"year": 2022, "demand": 72, "sustainability": 60, "risk": 35},
+    {"year": 2023, "demand": 71, "sustainability": 61, "risk": 35},
+    {"year": 2024, "demand": 70, "sustainability": 60, "risk": 38},
+    {"year": 2025, "demand": 70, "sustainability": 60, "risk": 42}
+  ],
+  "PHP": [
+    {"year": 2021, "demand": 55, "sustainability": 48, "risk": 45},
+    {"year": 2022, "demand": 53, "sustainability": 46, "risk": 48},
+    {"year": 2023, "demand": 50, "sustainability": 45, "risk": 50},
+    {"year": 2024, "demand": 49, "sustainability": 44, "risk": 54},
+    {"year": 2025, "demand": 48, "sustainability": 44, "risk": 62}
+  ],
+  "Machine Learning": [
+    {"year": 2021, "demand": 88, "sustainability": 82, "risk": 17},
+    {"year": 2022, "demand": 91, "sustainability": 85, "risk": 14},
+    {"year": 2023, "demand": 93, "sustainability": 88, "risk": 12},
+    {"year": 2024, "demand": 94, "sustainability": 89, "risk": 11},
+    {"year": 2025, "demand": 94, "sustainability": 90, "risk": 12}
+  ],
+  "Data Analysis": [
+    {"year": 2021, "demand": 76, "sustainability": 70, "risk": 27},
+    {"year": 2022, "demand": 77, "sustainability": 71, "risk": 26},
+    {"year": 2023, "demand": 78, "sustainability": 73, "risk": 25},
+    {"year": 2024, "demand": 78, "sustainability": 74, "risk": 26},
+    {"year": 2025, "demand": 78, "sustainability": 75, "risk": 26}
+  ],
+  "Cloud": [
+    {"year": 2021, "demand": 88, "sustainability": 82, "risk": 18},
+    {"year": 2022, "demand": 90, "sustainability": 85, "risk": 17},
+    {"year": 2023, "demand": 91, "sustainability": 86, "risk": 17},
+    {"year": 2024, "demand": 92, "sustainability": 87, "risk": 18},
+    {"year": 2025, "demand": 92, "sustainability": 88, "risk": 20}
+  ],
+  "AWS": [
+    {"year": 2021, "demand": 86, "sustainability": 79, "risk": 19},
+    {"year": 2022, "demand": 88, "sustainability": 82, "risk": 18},
+    {"year": 2023, "demand": 89, "sustainability": 84, "risk": 17},
+    {"year": 2024, "demand": 90, "sustainability": 85, "risk": 17},
+    {"year": 2025, "demand": 90, "sustainability": 87, "risk": 18}
+  ],
+  "Azure": [
+    {"year": 2021, "demand": 80, "sustainability": 75, "risk": 21},
+    {"year": 2022, "demand": 82, "sustainability": 77, "risk": 21},
+    {"year": 2023, "demand": 84, "sustainability": 79, "risk": 20},
+    {"year": 2024, "demand": 85, "sustainability": 80, "risk": 19},
+    {"year": 2025, "demand": 84, "sustainability": 82, "risk": 22}
+  ],
+  "Automation": [
+    {"year": 2021, "demand": 73, "sustainability": 67, "risk": 29},
+    {"year": 2022, "demand": 74, "sustainability": 68, "risk": 28},
+    {"year": 2023, "demand": 75, "sustainability": 69, "risk": 27},
+    {"year": 2024, "demand": 76, "sustainability": 70, "risk": 26},
+    {"year": 2025, "demand": 76, "sustainability": 72, "risk": 28}
+  ],
+  "Testing": [
+    {"year": 2021, "demand": 66, "sustainability": 59, "risk": 35},
+    {"year": 2022, "demand": 67, "sustainability": 60, "risk": 34},
+    {"year": 2023, "demand": 68, "sustainability": 61, "risk": 33},
+    {"year": 2024, "demand": 69, "sustainability": 62, "risk": 34},
+    {"year": 2025, "demand": 69, "sustainability": 62, "risk": 34}
+  ],
+  "DevOps": [
+    {"year": 2021, "demand": 89, "sustainability": 83, "risk": 16},
+    {"year": 2022, "demand": 90, "sustainability": 85, "risk": 15},
+    {"year": 2023, "demand": 91, "sustainability": 87, "risk": 15},
+    {"year": 2024, "demand": 91, "sustainability": 88, "risk": 15},
+    {"year": 2025, "demand": 91, "sustainability": 89, "risk": 16}
+  ],
+  "Cybersecurity": [
+    {"year": 2021, "demand": 90, "sustainability": 84, "risk": 14},
+    {"year": 2022, "demand": 91, "sustainability": 86, "risk": 13},
+    {"year": 2023, "demand": 92, "sustainability": 88, "risk": 12},
+    {"year": 2024, "demand": 93, "sustainability": 89, "risk": 12},
+    {"year": 2025, "demand": 93, "sustainability": 90, "risk": 14}
+  ],
+  "UI/UX Design": [
+    {"year": 2021, "demand": 70, "sustainability": 61, "risk": 37},
+    {"year": 2022, "demand": 71, "sustainability": 63, "risk": 35},
+    {"year": 2023, "demand": 72, "sustainability": 65, "risk": 34},
+    {"year": 2024, "demand": 72, "sustainability": 66, "risk": 34},
+    {"year": 2025, "demand": 72, "sustainability": 66, "risk": 34}
+  ],
+  "Blockchain": [
+    {"year": 2021, "demand": 60, "sustainability": 55, "risk": 40},
+    {"year": 2022, "demand": 58, "sustainability": 54, "risk": 42},
+    {"year": 2023, "demand": 56, "sustainability": 53, "risk": 45},
+    {"year": 2024, "demand": 55, "sustainability": 52, "risk": 49},
+    {"year": 2025, "demand": 55, "sustainability": 52, "risk": 50}
+  ],
+  "Data Engineering": [
+    {"year": 2021, "demand": 85, "sustainability": 79, "risk": 18},
+    {"year": 2022, "demand": 87, "sustainability": 82, "risk": 17},
+    {"year": 2023, "demand": 88, "sustainability": 84, "risk": 17},
+    {"year": 2024, "demand": 89, "sustainability": 85, "risk": 17},
+    {"year": 2025, "demand": 89, "sustainability": 86, "risk": 18}
+  ],
+  "AI": [
+    {"year": 2021, "demand": 92, "sustainability": 86, "risk": 14},
+    {"year": 2022, "demand": 93, "sustainability": 88, "risk": 12},
+    {"year": 2023, "demand": 94, "sustainability": 90, "risk": 11},
+    {"year": 2024, "demand": 95, "sustainability": 91, "risk": 10},
+    {"year": 2025, "demand": 95, "sustainability": 92, "risk": 10}
+  ],
+  "Mobile Development": [
+    {"year": 2021, "demand": 70, "sustainability": 60, "risk": 38},
+    {"year": 2022, "demand": 69, "sustainability": 61, "risk": 37},
+    {"year": 2023, "demand": 68, "sustainability": 62, "risk": 36},
+    {"year": 2024, "demand": 68, "sustainability": 62, "risk": 36},
+    {"year": 2025, "demand": 68, "sustainability": 62, "risk": 40}
+  ]
+}
