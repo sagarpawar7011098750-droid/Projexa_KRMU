@@ -8,7 +8,11 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/analyze/(.*)",
+      "destination": "/server.js"
+    },
+    {
+      "source": "/compare(.*)",
       "destination": "/server.js"
     }
   ]
